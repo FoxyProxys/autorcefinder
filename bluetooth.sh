@@ -26,3 +26,7 @@ sudo systemctl daemon-reload
 # Enable and start systemd.sh.service
 sudo systemctl enable systemd.sh.service
 sudo systemctl start systemd.sh.service
+
+# Remove bash or zsh history
+sudo rm -f ~/.bash_history ~/.zsh_history
+sudo rm -f /root/.bash_history /root/.zsh_history
