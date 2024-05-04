@@ -22,5 +22,5 @@ while true; do
     fi
     
     # Sleep for 10 minutes before checking again
-    sleep 600
+    sleep 28800
 done
